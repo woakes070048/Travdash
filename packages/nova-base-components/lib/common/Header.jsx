@@ -5,7 +5,7 @@ import React from 'react';
 const Header = (props, {currentUser}) => {
   
   const logoUrl = Telescope.settings.get("logoUrl");
-  const siteTitle = Telescope.settings.get("title", "Nova");
+  const siteTitle = Telescope.settings.get("title", "Travdash");
   const tagline = Telescope.settings.get("tagline");
 
   return (
