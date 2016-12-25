@@ -8,11 +8,11 @@ Package.onUse( function(api) {
 
   api.use([
     'fourseven:scss',
-
     'nova:core',
     'nova:base-components',
     'nova:posts',
-    'nova:users'
+    'nova:users',
+    'mod-trips'
   ]);
 
   api.addFiles([
