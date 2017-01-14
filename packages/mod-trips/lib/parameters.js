@@ -1,23 +1,23 @@
 import Telescope from 'meteor/nova:lib';
 import { Injected } from 'meteor/meteorhacks:inject-initial';
 import moment from 'moment';
-import Posts from './collection.js';
+import Trips from './collection.js';
 
 /**
  * @summary Parameter callbacks let you add parameters to subscriptions
- * @namespace Posts.parameters
+ * @namespace Trips.parameters
  */
-Posts.parameters = {};
+Trips.parameters = {};
 
 /**
- * @summary Takes a set of terms, and translates them into a `parameter` object containing the appropriate find
- * and options arguments for the subscriptions's Posts.find()
+ * @summary Takes a set of terms, and translates them into a `parameter` object comntaining the appropriate find
+ * and options arguments for the subscriptions's Trips.find()
  * @memberof Parameters
  * @param {Object} terms
  */
-Posts.parameters.get = function (terms) {
+Trips.parameters.get = function (terms) {
 
-  // add this to ensure all post publications pass audit-arguments-check
+  // add this to ensure all trip publications pass audit-arguments-check
   check(terms, Match.Any);
 
   // console.log(terms)
@@ -31,15 +31,15 @@ Posts.parameters.get = function (terms) {
     options: {}
   };
 
-  // iterate over posts.parameters callbacks
-  parameters = Telescope.callbacks.run("posts.parameters", parameters, _.clone(terms));
+  // iterate over trips.parameters callbacks
+  parameters = Telescope.callbacks.run("trips.parameters", parameters, _.clone(terms));
 
   // if sort options are not provided, default to "createdAt" sort
   if (_.isEmpty(parameters.options.sort)) {
     parameters.options.sort = {sticky: -1, createdAt: -1};
   }
 
-  // extend sort to sort posts by _id to break ties
+  // extend sort to sort trips by _id to break ties
   // NOTE: always do this last to avoid _id sort overriding another sort
   parameters = Telescope.utils.deepExtend(true, parameters, {options: {sort: {_id: -1}}});
 
@@ -51,22 +51,22 @@ Posts.parameters.get = function (terms) {
 // Parameter callbacks
 
 // View Parameter
-// Add a "view" property to terms which can be used to filter posts.
+// Add a "view" property to terms which can be used to filter trips.
 function addViewParameter (parameters, terms) {
 
   // if view is not defined, default to "new"
   var view = !!terms.view ? Telescope.utils.dashToCamel(terms.view) : 'new';
 
   // get query parameters according to current view
-  if (typeof Posts.views[view] !== 'undefined')
-    parameters = Telescope.utils.deepExtend(true, parameters, Posts.views[view](terms));
+  if (typeof Trips.views[view] !== 'undefined')
+    parameters = Telescope.utils.deepExtend(true, parameters, Trips.views[view](terms));
 
   return parameters;
 }
-Telescope.callbacks.add("posts.parameters", addViewParameter);
+Telescope.callbacks.add("trips.parameters", addViewParameter);
 
 // View Parameter
-// Add "after" and "before" properties to terms which can be used to limit posts in time.
+// Add "after" and "before" properties to terms which can be used to limit trips in time.
 function addTimeParameter (parameters, terms) {
 
   // console.log("// addTimeParameter")
@@ -139,7 +139,7 @@ function addTimeParameter (parameters, terms) {
 
   return parameters;
 }
-Telescope.callbacks.add("posts.parameters", addTimeParameter);
+Telescope.callbacks.add("trips.parameters", addTimeParameter);
 
 // limit the number of items that can be requested at once
 function limitPosts (parameters, terms) {
@@ -173,4 +173,4 @@ function limitPosts (parameters, terms) {
 
   return parameters;
 }
-Telescope.callbacks.add("posts.parameters", limitPosts);
+Telescope.callbacks.add("trips.parameters", limitPosts);

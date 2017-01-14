@@ -30,6 +30,7 @@ Trips.views.baseParameters = {
  * @summary Top view
  */
 Trips.views.add("top", function (terms) {
+
   return {
     ...Trips.views.baseParameters,
     options: {sort: {sticky: -1, score: -1}}

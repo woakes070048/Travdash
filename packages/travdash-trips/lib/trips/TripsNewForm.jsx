@@ -2,7 +2,7 @@ import Telescope from 'meteor/nova:lib';
 import React, { PropTypes, Component } from 'react';
 import { intlShape } from 'react-intl';
 import NovaForm from "meteor/nova:forms";
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 import Trips from "meteor/mod-trips";
 
 const TripsNewForm = (props, context) => {
