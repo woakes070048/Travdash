@@ -41,5 +41,6 @@ nova:debug
 
 ############ Your Packages ############
 
-my-custom-package
+travdash:trips
+travdash:base-styles
 mod-trips

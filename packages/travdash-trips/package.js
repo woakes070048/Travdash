@@ -1,5 +1,5 @@
 Package.describe({
-  name: "my-custom-package"
+  name: "travdash:trips"
 });
 
 Package.onUse( function(api) {
@@ -31,5 +31,4 @@ Package.onUse( function(api) {
     'lib/server/emails/customNewPost.handlebars',
     'lib/server/emails/customEmail.handlebars'
   ], ['server']);
-
 });

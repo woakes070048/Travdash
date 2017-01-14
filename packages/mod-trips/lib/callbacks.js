@@ -1,5 +1,5 @@
 import Telescope from 'meteor/nova:lib';
-import Trips from './collection.js'
+import Trips from './collection.js';
 import marked from 'marked';
 import Users from 'meteor/nova:users';
 
@@ -104,7 +104,7 @@ Trips.before.update(function (userId, doc, fieldNames, modifier) {
 // ------------------------------------- trips.new.method -------------------------------- //
 
 /**
- * @summary Check that the current user can trip
+ * @summary Check that the current user can create a trip
  */
 function TripsNewUserCheck (trip, user) {
   // check that user can trip
@@ -231,22 +231,25 @@ Telescope.callbacks.add("trips.new.sync", TripsNewSetFuture);
 /**
  * @summary Increment the user's trip count
  */
-function TripsNewIncrementPostCount (trip) {
+function TripsNewIncrementTripCount (trip) {
+
   var userId = trip.userId;
   Users.update({_id: userId}, {$inc: {"telescope.tripCount": 1}});
 }
-Telescope.callbacks.add("trips.new.async", TripsNewIncrementPostCount);
+Telescope.callbacks.add("trips.new.async", TripsNewIncrementTripCount);
 
 /**
  * @summary Make users upvote their own new trips
  */
-function TripsNewUpvoteOwnPost (trip) {
+function TripsNewUpvoteOwnTrip (trip) {
   if (typeof Telescope.operateOnItem !== "undefined") {
+
     var tripAuthor = Users.findOne(trip.userId);
+
     Telescope.operateOnItem(Trips, trip._id, tripAuthor, "upvote");
   }
 }
-Telescope.callbacks.add("trips.new.async", TripsNewUpvoteOwnPost);
+Telescope.callbacks.add("trips.new.async", TripsNewUpvoteOwnTrip);
 
 /**
  * @summary Add new trip notification callback on trip submit

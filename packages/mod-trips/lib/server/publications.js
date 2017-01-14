@@ -2,25 +2,25 @@ import Telescope from 'meteor/nova:lib';
 // import Comments from "meteor/nova:comments";
 import Users from 'meteor/nova:users';
 import { Counts } from 'meteor/tmeasday:publish-counts';
-import Posts from '../collection.js';
+import Trips from '../collection.js';
 
-Posts._ensureIndex({"status": 1, "postedAt": 1});
+Trips._ensureIndex({"status": 1, "postedAt": 1});
 
 // ------------------------------------- Helpers -------------------------------- //
 
 /**
- * @summary Get all users relevant to a list of posts
- * (authors of the listed posts, and first four commenters of each post)
- * @param {Object} posts
+ * @summary Get all users relevant to a list of trips
+ * (authors of the listed trips, and first four commenters of each trip)
+ * @param {Object} trips
  */
-const getPostsListUsers = posts => {
+const getTripsListUsers = trips => {
 
-  // add the userIds of each post authors
-  let userIds = _.pluck(posts.fetch(), 'userId');
+  // add the userIds of each trip authors
+  let userIds = _.pluck(trips.fetch(), 'userId');
 
-  // for each post, also add first four commenter's userIds to userIds array
-  posts.forEach(function (post) {
-    userIds = userIds.concat(_.first(post.commenters,4));
+  // for each trip, also add first four commenter's userIds to userIds array
+  trips.forEach(function (trip) {
+    userIds = userIds.concat(_.first(trip.commenters,4));
   });
 
   userIds = _.unique(userIds);
@@ -30,28 +30,28 @@ const getPostsListUsers = posts => {
 };
 
 /**
- * @summary Get all users relevant to a single post
- * (author of the current post, authors of its comments, and upvoters & downvoters of the post)
- * @param {Object} post
+ * @summary Get all users relevant to a single trip
+ * (author of the current trip, authors of its comments, and upvoters & downvoters of the trip)
+ * @param {Object} trip
  */
-const getSinglePostUsers = post => {
+const getSingleTripUsers = trip => {
 
-  let users = [post.userId]; // publish post author's ID
+  let users = [trip.userId]; // publish trip author's ID
 
   /*
-  NOTE: to avoid circular dependencies between nova:posts and nova:comments,
+  NOTE: to avoid circular dependencies between nova:trips and nova:comments,
   use callback hook to get comment authors
   */
-  users = Telescope.callbacks.run("posts.single.getUsers", users, post);
+  users = Telescope.callbacks.run("trips.single.getUsers", users, trip);
 
   // add upvoters
-  if (post.upvoters && post.upvoters.length) {
-    users = users.concat(post.upvoters);
+  if (trip.upvoters && trip.upvoters.length) {
+    users = users.concat(trip.upvoters);
   }
 
   // add downvoters
-  if (post.downvoters && post.downvoters.length) {
-    users = users.concat(post.downvoters);
+  if (trip.downvoters && trip.downvoters.length) {
+    users = users.concat(trip.downvoters);
   }
 
   // remove any duplicate IDs
@@ -63,10 +63,10 @@ const getSinglePostUsers = post => {
 // ------------------------------------- Publications -------------------------------- //
 
 /**
- * @summary Publish a list of posts, along with the users corresponding to these posts
+ * @summary Publish a list of trips, along with the users corresponding to these trips
  * @param {Object} terms
  */
-Meteor.publish('posts.list', function (terms) {
+Meteor.publish('trips.list', function (terms) {
 
   // this.unblock(); // causes bug where publication returns 0 results
 
@@ -75,45 +75,45 @@ Meteor.publish('posts.list', function (terms) {
     const currentUser = this.userId && Users.findOne(this.userId);
 
     terms.currentUserId = this.userId; // add currentUserId to terms
-    const {selector, options} = Posts.parameters.get(terms);
+    const {selector, options} = Trips.parameters.get(terms);
 
-    Counts.publish(this, terms.listId, Posts.find(selector, options), {noReady: true});
+    Counts.publish(this, terms.listId, Trips.find(selector, options), {noReady: true});
 
-    options.fields = Posts.publishedFields.list;
+    options.fields = Trips.publishedFields.list;
 
-    const posts = Posts.find(selector, options);
+    const trips = Trips.find(selector, options);
 
     // note: doesn't work yet :(
-    // CursorCounts.set(terms, posts.count(), this.connection.id);
+    // CursorCounts.set(terms, trips.count(), this.connection.id);
 
     const users = Tracker.nonreactive(function () {
-      return getPostsListUsers(posts);
+      return getTripsListUsers(trips);
     });
 
-    return Users.canDo(currentUser, "posts.view.approved.all") ? [posts, users] : [];
+    return Users.canDo(currentUser, "trips.view.approved.all") ? [trips, users] : [];
 
   });
 
 });
 
 /**
- * @summary Publish a single post, along with all relevant users
+ * @summary Publish a single trip, along with all relevant users
  * @param {Object} terms
  */
-Meteor.publish('posts.single', function (terms) {
+Meteor.publish('trips.single', function (terms) {
 
   check(terms, Match.OneOf({_id: String}, {_id: String, slug: Match.Any}));
 
   const currentUser = this.userId && Users.findOne(this.userId);
-  const options = {fields: Posts.publishedFields.single};
-  const posts = Posts.find(terms._id, options);
-  const post = posts.fetch()[0];
+  const options = {fields: Trips.publishedFields.single};
+  const trips = Trips.find(terms._id, options);
+  const trip = trips.fetch()[0];
 
-  if (post) {
-    const users = getSinglePostUsers(post);
-    return Users.canView(currentUser, post) ? [posts, users] : [];
+  if (trip) {
+    const users = getSingleTripUsers(trip);
+    return Users.canView(currentUser, trip) ? [trips, users] : [];
   } else {
-    console.log(`// posts.single: no post found for _id “${terms._id}”`); // eslint-disable-line
+    console.log(`// trips.single: no trip found for _id “${terms._id}”`); // eslint-disable-line
     return [];
   }
 
