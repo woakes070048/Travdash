@@ -1,6 +1,6 @@
 import { Picker } from 'meteor/meteorhacks:picker';
 import escapeStringRegexp from 'escape-string-regexp';
-import Posts from '../collection.js';
+import Trips from '../collection.js';
 
 Picker.route('/out', function(params, req, res, next) {
   var query = params.query;
@@ -12,11 +12,11 @@ Picker.route('/out', function(params, req, res, next) {
     So we search for any post whose URL contains the current URL to get a match
     even without the hash
     */
-    const post = Posts.findOne({url: {$regex: escapeStringRegexp(query.url)}});
+    const trip = Trips.findOne({url: {$regex: escapeStringRegexp(query.url)}});
 
-    if (post) {
+    if (trip) {
       var ip = req.headers && req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-      Posts.methods.increaseClicks(post._id, ip);
+      Trips.methods.increaseClicks(trip._id, ip);
       res.writeHead(301, {'Location': query.url});
       res.end();
     } else {

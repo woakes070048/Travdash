@@ -28,7 +28,7 @@ Trips.publishedFields.list = PublicationsUtils.arrayToFields([
 ]);
 
 /**
- * @summary Specify which fields should be published by the posts.single publication
+ * @summary Specify which fields should be published by the trips.single publication
  * @array Trips.publishedFields.single
  */
 Meteor.startup(() => {
