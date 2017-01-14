@@ -11,12 +11,11 @@ Package.onUse(function (api) {
 
   api.use([
     'nova:core@0.27.5-nova',
-    'fourseven:scss',
+    'fourseven:scss'
   ]);
 
   api.addFiles([
-    'lib/stylesheets/bootstrap.css',
-    'lib/stylesheets/main.scss'
+    'lib/scss/toolkit.scss'
   ], ['client']);
 
 });
