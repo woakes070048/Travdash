@@ -27,7 +27,7 @@ const Header = (props, {currentUser}) => {
           <div className="nav-new-trip">
             <Telescope.components.TripsNewButton/>
           </div>
-          <div className="nav-new-trip">
+          <div className="nav-new-post">
             <Telescope.components.PostsNewButton/>
           </div>
 
