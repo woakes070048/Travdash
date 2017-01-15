@@ -1,18 +1,9 @@
 # Travdash 
 
-<<<<<<< HEAD
-ST3 Linter for Meteor:
-=======
 ### Looking for the Apollo/GraphQL version? Check out the [devel](https://github.com/TelescopeJS/Telescope/tree/devel) branch.
 
 There are currently two distinct versions of Telescope: **Nova** and **Legacy**.
->>>>>>> 3c57ba0a0abea93392ae5938d8931d4415789f59
 
-http://cheng.logdown.com/posts/2015/09/15/linting-react-jsx-and-es6-javascript-with-eslint
-
-<<<<<<< HEAD
-http://info.meteor.com/blog/set-up-sublime-text-for-meteor-es6-es2015-and-jsx-syntax-and-linting
-=======
 Note that as of December 2016, the devel branch now uses [GraphQL](http://graphql.org) as its data layer while the master branch is still on the previous, non-GraphQL version. It is recommended you use the devel branch for any new projects if possible.
 
 **Legacy** is the old, Blaze-powered version of Telescope and you can find it on the [legacy](https://github.com/TelescopeJS/Telescope/tree/legacy) and [legacy-devel](https://github.com/TelescopeJS/Telescope/tree/legacy-devel) branches.
