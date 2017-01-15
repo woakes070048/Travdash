@@ -3,7 +3,7 @@ import React from 'react';
 //import { Messages } from "meteor/nova:core";
 
 const Header = (props, {currentUser}) => {
-  
+
   const logoUrl = Telescope.settings.get("logoUrl");
   const siteTitle = Telescope.settings.get("title", "Travdash");
   const tagline = Telescope.settings.get("tagline");
@@ -11,7 +11,7 @@ const Header = (props, {currentUser}) => {
   return (
     <div className="header-wrapper">
 
-      <header className="header">
+      <header className="navbar">
 
         <div className="logo">
           <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
@@ -24,7 +24,10 @@ const Header = (props, {currentUser}) => {
             {currentUser ? <Telescope.components.UsersMenu/> : <Telescope.components.UsersAccountMenu/>}
           </div>
 
-          <div className="nav-new-post">
+          <div className="nav-new-trip">
+            <Telescope.components.TripsNewButton/>
+          </div>
+          <div className="nav-new-trip">
             <Telescope.components.PostsNewButton/>
           </div>
 
