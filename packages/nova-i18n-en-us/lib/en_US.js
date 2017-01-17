@@ -3,9 +3,9 @@ import Telescope from 'meteor/nova:lib';
 Telescope.strings.en = {
   "forms.submit": "Submit",
   "forms.cancel": "Cancel",
+  "forms.edit": "Edit",
 
   "trips.new_trip": "New Trip",
-  "trips.edit": "Edit",
   "trips.edit_success": "Trip “{title}” edited.",
   "trips.delete": "Delete",
   "trips.delete_confirm": "Delete trip “{title}”?",
@@ -99,13 +99,19 @@ Telescope.strings.en = {
   "comments.body": "Body",
   "comments.rate_limit_error": "Please wait {details} seconds before commenting again.",
 
+  // Users profile
+  "users.about": "About",
+  "users.went":  "Went to",
+  "users.lives": "Lives in",
+  "users.from":  "From",
+  "users.telescope.bio": "Bio",
+
   "users.profile": "Profile",
   "users.complete_profile": "Complete your Profile",
   "users.edit_account": "Edit Account",
   "users.edit_success": "User “{name}” edited",
   "users.log_in": "Log In",
   "users.log_out": "Log Out",
-  "users.telescope.bio": "Bio",
   "users.telescope.displayName": "Display Name",
   "users.telescope.email": "Email",
   "users.telescope.twitterUsername": "Twitter Username",

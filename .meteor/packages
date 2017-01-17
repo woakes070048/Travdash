@@ -43,4 +43,5 @@ nova:debug
 
 travdash:trips
 travdash:base-styles
+travdash:users
 mod-trips
