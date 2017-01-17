@@ -70,6 +70,8 @@ Telescope.registerComponent("UsersSingle",          require('./users/UsersSingle
 Telescope.registerComponent("UsersAccount",         require('./users/UsersAccount.jsx'));
 Telescope.registerComponent("UsersEdit",            require('./users/UsersEdit.jsx'));
 Telescope.registerComponent("UsersProfile",         require('./users/UsersProfile.jsx'));
+Telescope.registerComponent("UsersProfileCard",     require('./users/UsersProfileCard.jsx'));
+Telescope.registerComponent("UsersProfileSummary",  require('./users/UsersProfileSummary.jsx'));
 Telescope.registerComponent("UsersProfileCheck",    require('./users/UsersProfileCheck.jsx'));
 Telescope.registerComponent("UsersAvatar",          require('./users/UsersAvatar.jsx'));
 Telescope.registerComponent("UsersName",            require('./users/UsersName.jsx'));
