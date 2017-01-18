@@ -1,7 +1,7 @@
 import Telescope from 'meteor/nova:lib';
 import React from 'react';
 import { DocumentContainer } from "meteor/utilities:react-list-container";
-import Trips from "meteor/mod-trips";
+import Trips from "meteor/travdash:trips";
 
 const TripsSingle = (props, context) => {
   return (

@@ -1,11 +1,14 @@
-/*
-Let's import all our files here. 
-*/
+import Trips from './collection.js';
 
-import "./callbacks.js"
-import "./emails.js"
-import "./components.js"
-import "./custom_fields.js"
-import "./intl.js"
-import "./groups.js"
-import "./routes.jsx"
+import './schema.js';
+import './parameters.js';
+import './notifications.js';
+import './views.js';
+import './helpers.js';
+import './published_fields.js';
+import './callbacks.js';
+// import './emails.js';
+import './methods.js';
+import './permissions.js';
+
+export default Trips;

@@ -3,8 +3,6 @@ import React from 'react';
 
 const TripsList = ({results, currentUser, hasMore, ready, count, totalCount, loadMore, showHeader = true}) => {
 
-  console.log(results);
-
   if (!!results.length) {
     return (
       <div className="trips-list">
@@ -32,9 +30,9 @@ const TripsList = ({results, currentUser, hasMore, ready, count, totalCount, loa
           <Telescope.components.TripsNoResults/>
         </div>
       </div>
-    )  
+    )
   }
-  
+
 };
 
 TripsList.displayName = "TripsList";

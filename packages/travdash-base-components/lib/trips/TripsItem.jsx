@@ -1,6 +1,6 @@
 import Telescope from 'meteor/nova:lib';
 import { ModalTrigger } from "meteor/nova:core";
-import Trips from "meteor/mod-trips";
+import Trips from "meteor/travdash:trips";
 import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 import { Link } from 'react-router';
@@ -25,7 +25,7 @@ class TripsItem extends Component {
           action="trips.edit.all"
           document={this.props.trip}
         >
-          <ModalTrigger title="Edit Trip" component={<a className="trips-action-edit"><FormattedMessage id="trips.edit"/></a>}>
+          <ModalTrigger title="Edit Trip" component={<a className="trips-action-edit"><FormattedMessage id="forms.edit"/></a>}>
             <Telescope.components.TripsEditForm trip={this.props.trip}/>
           </ModalTrigger>
         </Telescope.components.CanDo>
