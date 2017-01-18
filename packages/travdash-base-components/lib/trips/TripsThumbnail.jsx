@@ -1,5 +1,5 @@
 import React from 'react';
-import Trips from "meteor/mod-trips";
+import Trips from "meteor/travdash:trips";
 
 const TripsThumbnail = ({trip}) => {
   return (

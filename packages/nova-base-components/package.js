@@ -25,5 +25,5 @@ Package.onUse(function (api) {
 
   api.mainModule("lib/server.js", "server");
   api.mainModule("lib/client.js", "client");
-  
+
 });

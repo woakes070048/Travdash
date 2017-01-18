@@ -60,7 +60,6 @@ meteorhacks:unblock@1.1.0
 minifier-css@1.2.15
 minifier-js@1.2.15
 minimongo@1.0.19
-mod-trips@0.0.1
 modules@0.7.7
 modules-runtime@0.7.7
 mongo@1.1.14
@@ -125,8 +124,9 @@ std:accounts-ui@1.2.9
 tmeasday:check-npm-versions@0.3.1
 tmeasday:publish-counts@0.8.0
 tracker@1.1.1
+travdash:base-components@0.0.0
 travdash:base-styles@0.0.0
-travdash:trips@0.0.0
+travdash:trips@0.0.1
 travdash:users@0.0.0
 ui@1.0.12
 underscore@1.0.10

@@ -1,7 +1,7 @@
 import Telescope from 'meteor/nova:lib';
 import React from 'react';
 import { Link } from 'react-router';
-import Trips from "meteor/mod-trips";
+import Trips from "meteor/travdash:trips";
 
 const TripsCommenters = ({trip}) => {
   return (

@@ -1,34 +1,27 @@
 Package.describe({
-  name: "travdash:trips"
+  name: "travdash:trips",
+  summary: "",
+  version: "0.0.1",
+  git: ""
 });
 
-Package.onUse( function(api) {
+Package.onUse(function (api) {
 
-  api.versionsFrom("METEOR@1.0");
+  api.versionsFrom(['METEOR@1.0']);
 
   api.use([
-    'fourseven:scss',
-    'nova:core',
-    'nova:base-components',
-    'nova:posts',
-    'nova:users',
-    'mod-trips'
+    'nova:core@0.27.5-nova',
+    'nova:users@0.27.5-nova',
+    'travdash:users',
+    'utilities:react-list-container@0.1.10'
   ]);
 
-  api.addFiles([
-    'lib/modules.js'
-  ], ['client', 'server']);
+  api.use([
+    'nova:notifications@0.27.5-nova',
+    'nova:email@0.27.5-nova'
+  ], ['client', 'server'], {weak: true});
 
-  api.addFiles([
-    'lib/stylesheets/custom.scss'
-  ], ['client']);
+  api.mainModule("lib/server.js", "server");
+  api.mainModule("lib/client.js", "client");
 
-  api.addFiles([
-    'lib/server/templates.js'
-  ], ['server']);
-
-  api.addAssets([
-    'lib/server/emails/customNewPost.handlebars',
-    'lib/server/emails/customEmail.handlebars'
-  ], ['server']);
 });
