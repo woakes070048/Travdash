@@ -9,32 +9,32 @@ const Header = (props, {currentUser}) => {
   const tagline = Telescope.settings.get("tagline");
 
   return (
-    <div className="header-wrapper">
+    <nav className="navbar navbar-fixed-top navbar-dark bg-primary app-navbar">
 
-      <header className="navbar">
+      <div className="container">
 
-        <div className="logo">
+        <div className="navbar-header">
           <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
           {tagline ? <h2 className="tagline">{tagline}</h2> : "" }
         </div>
-        
-        <div className="nav">
-          
-          <div className="nav-user">
-            {currentUser ? <Telescope.components.UsersMenu/> : <Telescope.components.UsersAccountMenu/>}
-          </div>
 
-          <div className="nav-new-trip">
-            <Telescope.components.TripsNewButton/>
-          </div>
-          <div className="nav-new-post">
-            <Telescope.components.PostsNewButton/>
-          </div>
+        <div className="collapse navbar-toggleable-sm">
 
+          <ul className="nav navbar-nav float-right mr-0 hidden-sm-down">
+            <li className="nav-item nav-user">
+              {currentUser ? <Telescope.components.UsersMenu/> : <Telescope.components.UsersAccountMenu/>}
+            </li>
+            <li className="nav-item nav-new-trip">
+              <Telescope.components.TripsNewButton/>
+            </li>
+            <li className="nav-item nav-new-post">
+              <Telescope.components.PostsNewButton/>
+            </li>
+          </ul>
         </div>
 
-      </header>
-    </div>
+      </div>
+    </nav>
   )
 }
 
