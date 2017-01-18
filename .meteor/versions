@@ -126,6 +126,7 @@ tmeasday:publish-counts@0.8.0
 tracker@1.1.1
 travdash:base-components@0.0.0
 travdash:base-styles@0.0.0
+travdash:fonts@0.0.0
 travdash:trips@0.0.1
 travdash:users@0.0.0
 ui@1.0.12

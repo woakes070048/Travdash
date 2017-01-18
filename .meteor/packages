@@ -41,7 +41,8 @@ nova:debug
 
 ############ Your Packages ############
 
-travdash:base-components
+travdash:fonts
 travdash:base-styles
+travdash:base-components
 travdash:users
 travdash:trips
