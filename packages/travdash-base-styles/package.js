@@ -16,7 +16,7 @@ Package.onUse(function (api) {
   ]);
 
   api.addFiles([
-    'lib/scss/toolkit.scss',
+    'lib/scss/toolkit.scss'
   ], ['client']);
 
 });
