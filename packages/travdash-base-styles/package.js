@@ -11,11 +11,12 @@ Package.onUse(function (api) {
 
   api.use([
     'nova:core@0.27.5-nova',
+    'travdash:fonts',
     'fourseven:scss'
   ]);
 
   api.addFiles([
-    'lib/scss/toolkit.scss'
+    'lib/scss/toolkit.scss',
   ], ['client']);
 
 });

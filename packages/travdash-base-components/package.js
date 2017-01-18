@@ -15,7 +15,8 @@ Package.onUse( function(api) {
     'nova:posts',
     'nova:users',
     'travdash:users',
-    'travdash:trips'
+    'travdash:trips',
+    'travdash:base-styles'
   ]);
 
   api.addFiles([
