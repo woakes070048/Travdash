@@ -27,10 +27,10 @@
   // See also https://github.com/twbs/bootstrap/issues/17695
 
   // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
-    @include transition(transform .3s ease-out);
-    transform: translate(0, -25%);
-  }
+  // &.fade .modal-dialog {
+  //   @include transition(transform .3s ease-out);
+  //   transform: translate(0, -25%);
+  // }
   &.active .modal-dialog { transform: translate(0, 0); }
 }
 .modal-open .modal {
