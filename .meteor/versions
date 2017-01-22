@@ -64,6 +64,7 @@ modules@0.7.7
 modules-runtime@0.7.7
 mongo@1.1.14
 mongo-id@1.0.6
+my-custom-package@0.0.0
 nova:api@0.27.5-nova
 nova:base-components@0.27.5-nova
 nova:base-routes@0.27.5-nova
@@ -124,7 +125,6 @@ std:accounts-ui@1.2.9
 tmeasday:check-npm-versions@0.3.1
 tmeasday:publish-counts@0.8.0
 tracker@1.1.1
-travdash:base-components@0.0.0
 travdash:base-styles@0.0.0
 travdash:fonts@0.0.0
 travdash:trips@0.0.1

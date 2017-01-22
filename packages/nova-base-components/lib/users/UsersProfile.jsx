@@ -3,6 +3,7 @@ import React, { PropTypes, Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { ListContainer } from "meteor/utilities:react-list-container";
 import Posts from "meteor/nova:posts";
+import Trips from 'meteor/travdash:trips';
 import Users from 'meteor/nova:users';
 import { Link } from 'react-router';
 
@@ -33,6 +34,20 @@ const UsersProfile = ({user}, {currentUser}) => {
         component={Telescope.components.PostsList}
         componentProps={{showHeader: false}}
         listId="posts.list.user"
+      />
+
+    <h3><FormattedMessage id="users.trips"/></h3>
+      <ListContainer
+        collection={Trips}
+        publication="trips.list"
+        terms={terms}
+        selector={selector}
+        options={options}
+        joins={Posts.getJoins()}
+        cacheSubscription={false}
+        component={Telescope.components.TripsList}
+        componentProps={{showHeader: false}}
+        listId="trips.list.user"
       />
     </div>
   )

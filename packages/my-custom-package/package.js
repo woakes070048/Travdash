@@ -1,6 +1,6 @@
 Package.describe({
-  name: "travdash:base-components",
-  summary: "Travdash components package",
+  name: "my-custom-package",
+  summary: "Example package",
   version: "0.0.0"
 });
 
@@ -14,8 +14,6 @@ Package.onUse( function(api) {
     'nova:base-components',
     'nova:posts',
     'nova:users',
-    'travdash:users',
-    'travdash:trips',
     'travdash:base-styles'
   ]);
 
