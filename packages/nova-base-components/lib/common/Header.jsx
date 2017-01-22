@@ -14,22 +14,11 @@ const Header = (props, {currentUser}) => {
       <div className="container">
 
         <div className="navbar-header">
-          <button
-            className="navbar-toggler hidden-md-up float-right collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-          </button>
           {/* placeholder logo */}
           <h3>Travdash&nbsp;&nbsp;</h3>
         </div>
 
-        <div className="collapse navbar-toggleable-sm"
-             id="navbarResponsive"
-             aria-expanded="false">
+        <div className="collapse navbar-toggleable-sm">
 
           <ul className="nav navbar-nav">
             <li className="nav-item nav-new-trip">
