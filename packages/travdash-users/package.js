@@ -9,7 +9,6 @@ Package.onUse( function(api) {
   api.use([
     'fourseven:scss',
     'nova:core',
-    'nova:base-components',
     'nova:users'
   ]);
 

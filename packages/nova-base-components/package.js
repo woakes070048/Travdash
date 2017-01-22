@@ -16,6 +16,9 @@ Package.onUse(function (api) {
     'nova:users@0.27.5-nova',
     'nova:comments@0.27.5-nova',
 
+    // travdash
+    'travdash:trips',
+
     // third-party packages
     'fortawesome:fontawesome@4.5.0',
     'tmeasday:check-npm-versions@0.3.1',

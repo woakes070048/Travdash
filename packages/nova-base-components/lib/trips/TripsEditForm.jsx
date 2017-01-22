@@ -12,17 +12,18 @@ class TripsEditForm extends Component{
 
   constructor() {
     super();
-    this.deletePost = this.deletePost.bind(this);
+    this.deleteTrip = this.deleteTrip.bind(this);
   }
 
-  deletePost() {
-    const trip = this.props.trip;
-    const deletePostConfirm = this.context.intl.formatMessage({id: "trips.delete_confirm"}, {title: trip.title});
-    const deletePostSuccess = this.context.intl.formatMessage({id: "trips.delete_success"}, {title: trip.title});
+  deleteTrip() {
 
-    if (window.confirm(deletePostConfirm)) {
+    const trip = this.props.trip;
+    const deleteTripConfirm = this.context.intl.formatMessage({id: "trips.delete_confirm"}, {title: trip.title});
+    const deleteTripSuccess = this.context.intl.formatMessage({id: "trips.delete_success"}, {title: trip.title});
+
+    if (window.confirm(deleteTripConfirm)) {
       this.context.actions.call('trips.remove', trip._id, (error, result) => {
-        this.context.messages.flash(deletePostSuccess, "success");
+        this.context.messages.flash(deleteTripSuccess, "success");
         this.context.events.track("trip deleted", {'_id': trip._id});
       });
     }
@@ -63,7 +64,7 @@ class TripsEditForm extends Component{
           }}
         />
         <hr/>
-        <a onClick={this.deletePost} className="delete-trip-link"><Telescope.components.Icon name="close"/> <FormattedMessage id="trips.delete"/></a>
+        <a onClick={this.deleteTrip} className="delete-trip-link"><Telescope.components.Icon name="close"/> <FormattedMessage id="trips.delete"/></a>
       </div>
     )
   }

@@ -142,7 +142,7 @@ function addTimeParameter (parameters, terms) {
 Telescope.callbacks.add("trips.parameters", addTimeParameter);
 
 // limit the number of items that can be requested at once
-function limitPosts (parameters, terms) {
+function limitTrips (parameters, terms) {
   var maxLimit = 200;
 
   // 1. set default limit to 10
@@ -173,4 +173,4 @@ function limitPosts (parameters, terms) {
 
   return parameters;
 }
-Telescope.callbacks.add("trips.parameters", limitPosts);
+Telescope.callbacks.add("trips.parameters", limitTrips);

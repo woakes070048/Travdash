@@ -1,0 +1,298 @@
+
+//////////////////////////////////////////////////////
+// trip List                                        //
+//////////////////////////////////////////////////////
+
+.trips-list-header{
+  @include medium-large{
+    @include flex-center;
+    justify-content: space-between;
+  }
+  margin-bottom: $vmargin;
+}
+
+.trips-list-header-categories{
+  @include small{
+    margin: 0 auto;
+    margin-bottom: $vmargin;
+    text-align: center;
+    .btn-group{
+      margin-right: 0;
+      width: 100%;
+    }
+    .dropdown-toggle{
+      width: 100%;
+    }
+  }
+}
+
+.trips-views{
+  @include small{
+    margin-bottom: $vmargin;
+    .btn-group{
+      margin-right: 0;
+      width: 100%;
+    }
+    .dropdown-toggle{
+      width: 100%;
+    }
+  }
+  a.btn{
+    @include border;
+    // @include border-radius;
+    // padding: 3px 5px;
+    // margin-right: 5px;
+    &.trips-view-inactive{
+      @include activeHover;
+    }
+    &.trips-view-active{
+      background: $light-blue;
+    }
+  }
+  .btn-group{
+    margin-right: $hmargin;
+  }
+}
+
+.trips-list-content{
+  border-top: $border;
+  // padding-top: 15px;
+  // margin-top: 15px;
+  margin-bottom: $vmargin;
+}
+
+.trips-load-more, .comments-load-more{
+  display: block;
+  text-align: center;
+  @include border;
+  @include border-radius;
+  font-size: $large-font;
+  padding: 10px 20px;
+  @include activeHover;
+  width: 100%;
+  background: $white;
+  color: $active-color;
+}
+
+.trips-load-more-loading{
+  padding: 21px 0;
+}
+
+//////////////////////////////////////////////////////
+// trip Item                                        //
+//////////////////////////////////////////////////////
+
+.trips-item{
+  @include medium-large{
+    @include flex-center;
+  }
+  border-bottom: $border;
+  padding: $vmargin 5px;
+  // margin-bottom: 15px;
+  &.trips-sticky{
+    background: $light-yellow;
+
+  }
+}
+
+.trips-item-vote{
+  @include small{
+    float: right;
+  }
+  @include medium-large{
+    margin-right: $hmargin;
+  }
+}
+
+.upvote-button{
+  @include border;
+  @include border-radius;
+  @include flex-center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3px 5px;
+  .icon{
+    text-align: center;
+    display: block;
+  }
+  .vote-count{
+    text-align: center;
+    display: block;
+  }
+  .voted &{
+    color: $light-text;
+  }
+  @include activeHover;
+  &, &:active, &:hover{
+    text-decoration: none;
+  }
+}
+
+.trips-item-content{
+  flex-grow: 1;
+}
+
+.trips-item-title{
+  @include small{
+    margin-right: 40px;
+    font-size: $large-font;
+    margin-bottom: $vmargin/2;
+  }
+  @include medium-large{
+    @include flex-center;
+    font-size: $larger-font;
+    margin-bottom: 5px;
+  }
+  .trips-item-title-link{
+    @include small{
+      display: block;
+      margin-bottom: $vmargin/2;
+    }
+    color: $black;
+    &, &:active, &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.trips-categories{
+  flex-wrap: wrap;
+  @include medium-large{
+    margin-left: 5px;
+  }
+  @include flex-center;
+  a{
+    display: block;
+    font-size: $small-font;
+    @include border;
+    @include border-radius;
+    margin-right: 5px;
+    padding: 2px 6px;
+    @include activeHover;
+  }
+}
+
+.trips-item-meta{
+  @include medium-large{
+    @include flex-center;
+  }
+  font-size: $small-font;
+  .users-avatar{
+    margin-right: 5px;
+  }
+  .users-name, .trips-item-date, .trips-item-comments, .trips-stats, .trip-actions{
+    margin-right: $hmargin;
+  }
+}
+
+.trips-item-user{
+  @include small{
+    margin-bottom: $vmargin/2;
+  }
+  @include flex-center;
+}
+
+.trips-item-date, .trips-item-comments{
+  @include small{
+    margin-bottom: $vmargin/2;
+  }
+  color: $medium-text;
+}
+
+.trips-stats{
+  @include small{
+    margin-bottom: $vmargin/2;
+    display: inline-block;
+  }
+  @include border;
+  @include border-radius;
+  font-size: $smaller-font;
+  .trips-stats-item{
+    border-right: $border;
+    padding: 2px 5px;
+    display: inline-block;
+    &:last-child{
+      border: none;
+    }
+  }
+}
+
+.trip-actions{
+  @include flex-center;
+}
+
+.trips-commenters{
+  @include small{
+    display: none;
+  }
+  @include flex-center;
+}
+
+.trips-commenters-avatars{
+  display: flex;
+  .users-avatar{
+    margin-right: $hmargin;
+  }
+}
+
+.trips-thumbnail{
+  @include small{
+    float: left;
+  }
+  display: block;
+  margin-right: $hmargin;
+  img{
+    display: block;
+    height: 50px;
+    width: auto;
+  }
+}
+
+//////////////////////////////////////////////////////
+// trip Page                                        //
+//////////////////////////////////////////////////////
+
+.trips-page{
+  .trips-item{
+    @include border-radius;
+    border: $border;
+    padding: $hmargin;
+    margin-bottom: $vmargin;
+  }
+}
+
+.trips-page-body{
+  font-size: $large-font;
+  margin-bottom: $hmargin;
+}
+
+//////////////////////////////////////////////////////
+// Other Elements                                   //
+//////////////////////////////////////////////////////
+
+.trips-day{
+  margin-bottom: $vmargin * 2;
+  .trips-load-more{
+    border: none;
+    padding: 0;
+    &:hover{
+      background: inherit;
+      color: inherit;
+      border: inherit;
+    }
+  }
+  .trips-no-results{
+    margin-top: $vmargin;
+  }
+}
+
+.trips-edit-form-header{
+  @include flex-center;
+  justify-content: space-between;
+}
+
+.trips-edit-form-admin{
+  @include flex-center;
+  justify-content: space-between;
+  margin-bottom: $vmargin * 2;
+}

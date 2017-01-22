@@ -15,9 +15,10 @@
 @import "other";
 @import "forms";
 @import "posts";
+@import "trips";
 @import "users";
 
-.new-post-button{
+.new-post-button, .new-trip-button{
   margin-bottom: 15px;
 }
 
@@ -42,6 +43,6 @@ code{
   opacity: 0.3;
 }
 
-.posts-day h2{
+.posts-day, .trips-day h2{
   font-weight: bold;
 }
