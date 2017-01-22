@@ -125,6 +125,7 @@ Telescope.strings.en = {
   "users.admin": "Admin",
   "users.isAdmin": "Admin",
   "users.posts": "Posts",
+  "users.trips": "Trips",
   "users.please_log_in": "Please log in",
   "users.cannot_post": "Sorry, you do not have permissions to post at this time",
   "users.subscribe": "Subscribe to this user's posts",

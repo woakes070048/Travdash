@@ -4,10 +4,11 @@ import { DocumentContainer } from "meteor/utilities:react-list-container";
 import Trips from "meteor/travdash:trips";
 
 const TripsSingle = (props, context) => {
+
   return (
-    <DocumentContainer 
-      collection={Trips} 
-      publication="trips.single" 
+    <DocumentContainer
+      collection={Trips}
+      publication="trips.single"
       selector={{_id: props.params._id}}
       terms={props.params}
       joins={Trips.getJoins()}

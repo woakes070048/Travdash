@@ -12,13 +12,16 @@ import ReactDOM from 'react-dom';
 // import useNamedRoutes from 'use-named-routes';
 // import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-Telescope.routes.indexRoute = { name: "posts.list", component: Telescope.components.PostsHome };
+Telescope.routes.indexRoute = { name: "trips.list", component: Telescope.components.TripsHome };
 
 Meteor.startup(() => {
 
   Telescope.routes.add([
+    {name:"trips.list",     path:"trips",                 component:Telescope.components.TripsHome},
+    {name:"posts.list",     path:"posts",                 component:Telescope.components.PostsHome},
     {name:"posts.daily",    path:"daily",                 component:Telescope.components.PostsDaily},
     {name:"posts.single",   path:"posts/:_id(/:slug)",    component:Telescope.components.PostsSingle},
+    {name:"trips.single",   path:"trips/:_id(/:slug)",    component:Telescope.components.TripsSingle},
     {name:"users.single",   path:"users/:slug",           component:Telescope.components.UsersSingle},
     {name:"users.account",  path:"account",               component:Telescope.components.UsersAccount},
     {name:"resetPassword",  path:"reset-password/:token", component:Telescope.components.UsersResetPassword},

@@ -44,6 +44,26 @@ Telescope.registerComponent("PostsEditForm",        require('./posts/PostsEditFo
 Telescope.registerComponent("PostsNewForm",         require('./posts/PostsNewForm.jsx'));
 Telescope.registerComponent("PostsCommentsThread",  require('./posts/PostsCommentsThread.jsx'));
 
+// trips
+
+Telescope.registerComponent("TripsCommenters",      require('./trips/TripsCommenters.jsx'));
+Telescope.registerComponent("TripsCommentsThread",  require('./trips/TripsCommentsThread.jsx'));
+Telescope.registerComponent("TripsEditForm",        require('./trips/TripsEditForm.jsx'));
+Telescope.registerComponent("TripsHome",            require('./trips/TripsHome.jsx'));
+Telescope.registerComponent("TripsItem",            require('./trips/TripsItem.jsx'));
+Telescope.registerComponent("TripsList",            require('./trips/TripsList.jsx'));
+Telescope.registerComponent("TripsListHeader",      require('./trips/TripsListHeader.jsx'));
+Telescope.registerComponent("TripsLoading",         require('./trips/TripsLoading.jsx'));
+Telescope.registerComponent("TripsLoadMore",        require('./trips/TripsLoadMore.jsx'));
+Telescope.registerComponent("TripsNewButton",       require('./trips/TripsNewButton.jsx'));
+Telescope.registerComponent("TripsNewForm",         require('./trips/TripsNewForm.jsx'));
+Telescope.registerComponent("TripsNoMore",          require('./trips/TripsNoMore.jsx'));
+Telescope.registerComponent("TripsNoResults",       require('./trips/TripsNoResults.jsx'));
+Telescope.registerComponent("TripsPage",            require('./trips/TripsPage.jsx'));
+Telescope.registerComponent("TripsSingle",          require('./trips/TripsSingle.jsx'));
+Telescope.registerComponent("TripsStats",           require('./trips/TripsStats.jsx'));
+Telescope.registerComponent("TripsThumbnail",       require('./trips/TripsThumbnail.jsx'));
+
 // comments
 
 Telescope.registerComponent("CommentsItem",         require('./comments/CommentsItem.jsx'));
