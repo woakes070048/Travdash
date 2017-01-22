@@ -21,9 +21,9 @@ const UsersProfileSummary = ({user}, context) => {
 
           { lastTrip ? <li><Telescope.components.Icon name="calendar" iconClass="text-muted mr-3"/>{context.intl.formatMessage({id:"users.went"})} {lastTrip}</li> : "" }
 
-          { currCity ? <li><Telescope.components.Icon name="home" iconClass="text-muted mr-3"/></span>{context.intl.formatMessage({id:"users.lives"})} {currCity}</li> : "" }
+          { currCity ? <li><Telescope.components.Icon name="home" iconClass="text-muted mr-3"/>{context.intl.formatMessage({id:"users.lives"})} {currCity}</li> : "" }
 
-          { homeTown ?  <li><Telescope.components.Icon name="location-pin" iconClass="text-muted mr-3"/></span>{context.intl.formatMessage({id:"users.from"})} {homeTown}</li> : "" }
+          { homeTown ?  <li><Telescope.components.Icon name="location-pin" iconClass="text-muted mr-3"/>{context.intl.formatMessage({id:"users.from"})} {homeTown}</li> : "" }
         </ul>
       </div>
     </div>
