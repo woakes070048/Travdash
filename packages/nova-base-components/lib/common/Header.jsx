@@ -14,23 +14,29 @@ const Header = (props, {currentUser}) => {
       <div className="container">
 
         <div className="navbar-header">
-          <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
-          {tagline ? <h2 className="tagline">{tagline}</h2> : "" }
+          {/* placeholder logo */}
+          <h3>Travdash&nbsp;&nbsp;</h3>
         </div>
 
         <div className="collapse navbar-toggleable-sm">
+
+          <ul className="nav navbar-nav">
+            <li className="nav-item nav-new-trip">
+              <Telescope.components.TripsNewLink/>
+            </li>
+            <li className="nav-item nav-new-post">
+              <Telescope.components.PostsNewLink/>
+            </li>
+          </ul>
 
           <ul className="nav navbar-nav float-right mr-0 hidden-sm-down">
             <li className="nav-item nav-user">
               {currentUser ? <Telescope.components.UsersMenu/> : <Telescope.components.UsersAccountMenu/>}
             </li>
-            <li className="nav-item nav-new-trip">
-              <Telescope.components.TripsNewButton/>
-            </li>
-            <li className="nav-item nav-new-post">
-              <Telescope.components.PostsNewButton/>
-            </li>
           </ul>
+          <form className="form-inline float-right hidden-sm-down">
+            <Telescope.components.SearchForm/>
+          </form>
         </div>
 
       </div>

@@ -43,6 +43,7 @@ Telescope.registerComponent("PostsThumbnail",       require('./posts/PostsThumbn
 Telescope.registerComponent("PostsEditForm",        require('./posts/PostsEditForm.jsx'));
 Telescope.registerComponent("PostsNewForm",         require('./posts/PostsNewForm.jsx'));
 Telescope.registerComponent("PostsCommentsThread",  require('./posts/PostsCommentsThread.jsx'));
+Telescope.registerComponent("PostsNewLink",         require('./posts/PostsNewLink'));
 
 // trips
 
@@ -63,6 +64,7 @@ Telescope.registerComponent("TripsPage",            require('./trips/TripsPage.j
 Telescope.registerComponent("TripsSingle",          require('./trips/TripsSingle.jsx'));
 Telescope.registerComponent("TripsStats",           require('./trips/TripsStats.jsx'));
 Telescope.registerComponent("TripsThumbnail",       require('./trips/TripsThumbnail.jsx'));
+Telescope.registerComponent("TripsNewLink",         require('./trips/TripsNewLink.jsx'));
 
 // comments
 
