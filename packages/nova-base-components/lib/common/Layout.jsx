@@ -15,7 +15,7 @@ class Layout extends Component {
 
         <Telescope.components.Header {...this.props}/>
 
-        <div className="main">
+        <div className="main container pt-4">
 
           <FlashContainer component={Telescope.components.FlashMessages}/>
 
