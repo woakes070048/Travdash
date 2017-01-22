@@ -44,17 +44,15 @@ class SearchForm extends Component{
 
   render() {
     return (
-      <div className="search-form">
-        <Formsy.Form onChange={this.search}>
-          <Input
-            name="searchQuery"
-            value={this.state.search}
-            placeholder={this.context.intl.formatMessage({id: "posts.search"})}
-            type="text"
-            layout="elementOnly"
-          />
-        </Formsy.Form>
-      </div>
+      <Formsy.Form className="form-inline float-right hidden-sm-down" onChange={this.search}>
+        <Input
+          name="searchQuery"
+          value={this.state.search}
+          placeholder={this.context.intl.formatMessage({id: "posts.search"})}
+          type="text"
+          layout="elementOnly"
+        />
+      </Formsy.Form>
     )
   }
 }

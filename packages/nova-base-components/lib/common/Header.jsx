@@ -34,9 +34,7 @@ const Header = (props, {currentUser}) => {
               {currentUser ? <Telescope.components.UsersMenu/> : <Telescope.components.UsersAccountMenu/>}
             </li>
           </ul>
-          <form className="form-inline float-right hidden-sm-down">
-            <Telescope.components.SearchForm/>
-          </form>
+          <Telescope.components.SearchForm/>
         </div>
 
       </div>
