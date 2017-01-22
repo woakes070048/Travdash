@@ -43,6 +43,7 @@ Telescope.registerComponent("PostsThumbnail",       require('./posts/PostsThumbn
 Telescope.registerComponent("PostsEditForm",        require('./posts/PostsEditForm.jsx'));
 Telescope.registerComponent("PostsNewForm",         require('./posts/PostsNewForm.jsx'));
 Telescope.registerComponent("PostsCommentsThread",  require('./posts/PostsCommentsThread.jsx'));
+Telescope.registerComponent("PostsNewLink",         require('./posts/PostsNewLink'));
 
 // comments
 

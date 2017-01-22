@@ -1,5 +1,5 @@
 /*
-This file centralizes all our custom component overrides. 
+This file centralizes all our custom component overrides.
 */
 
 import Telescope from 'meteor/nova:lib';
@@ -28,3 +28,4 @@ Telescope.registerComponent("TripsNoResults",       require('./trips/TripsNoResu
 Telescope.registerComponent("TripsSingle",          require('./trips/TripsSingle.jsx'));
 Telescope.registerComponent("TripsStats",           require('./trips/TripsStats.jsx'));
 Telescope.registerComponent("TripsThumbnail",       require('./trips/TripsThumbnail.jsx'));
+Telescope.registerComponent("TripsNewLink",         require('./trips/TripsNewLink.jsx'));
