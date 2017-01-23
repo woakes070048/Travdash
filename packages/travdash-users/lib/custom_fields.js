@@ -22,7 +22,7 @@ Users.addField(
 
 Users.addField(
   {
-    fieldName: 'from',
+    fieldName: 'telescope.from',
     fieldSchema: {
       type: String,
       optional: true,
@@ -35,7 +35,7 @@ Users.addField(
 
 Users.addField(
   {
-    fieldName: 'lives',
+    fieldName: 'telescope.lives',
     fieldSchema: {
       type: String,
       optional: true,
@@ -48,7 +48,7 @@ Users.addField(
 
 Users.addField(
   {
-    fieldName: 'went',
+    fieldName: 'telescope.went',
     fieldSchema: {
       type: String,
       optional: true,
