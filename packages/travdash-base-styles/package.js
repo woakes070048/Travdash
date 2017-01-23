@@ -11,7 +11,7 @@ Package.onUse(function (api) {
 
   api.use([
     'nova:core@0.27.5-nova',
-    'travdash:fonts',
+    'travdash:assets',
     'fourseven:scss'
   ]);
 

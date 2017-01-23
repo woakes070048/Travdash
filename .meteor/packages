@@ -42,7 +42,7 @@ nova:debug
 ############ Your Packages ############
 
 my-custom-package
-travdash:fonts
+travdash:assets
 travdash:base-styles
 travdash:users
 travdash:trips

@@ -15,7 +15,7 @@ const Header = (props, {currentUser}) => {
 
         <div className="navbar-header">
           {/* placeholder logo */}
-          <h3>Travdash&nbsp;&nbsp;</h3>
+          <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
         </div>
 
         <div className="collapse navbar-toggleable-sm">
