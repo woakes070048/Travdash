@@ -101,9 +101,9 @@ Telescope.strings.en = {
 
   // Users profile
   "users.about": "About",
-  "users.went":  "Went to",
-  "users.lives": "Lives in",
-  "users.from":  "From",
+  "users.telescope.went":  "Went to",
+  "users.telescope.lives": "Lives in",
+  "users.telescope.from":  "From",
   "users.telescope.bio": "Bio",
 
   "users.profile": "Profile",

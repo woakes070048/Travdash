@@ -9,10 +9,20 @@ const canInsert = user => Users.canDo(user, "users.new");
 // check if user can edit *all* users
 const canEditAll = user => Users.canDo(user, "users.edit.all");
 
+Users.addField(
+  {
+    fieldName: 'telescope.tripCount',
+    fieldSchema: {
+      type: Number,
+      publish: true,
+      optional: true
+    }
+  },
+);
 
 Users.addField(
   {
-    fieldName: 'from',
+    fieldName: 'telescope.from',
     fieldSchema: {
       type: String,
       optional: true,
@@ -25,7 +35,7 @@ Users.addField(
 
 Users.addField(
   {
-    fieldName: 'lives',
+    fieldName: 'telescope.lives',
     fieldSchema: {
       type: String,
       optional: true,
@@ -38,7 +48,7 @@ Users.addField(
 
 Users.addField(
   {
-    fieldName: 'went',
+    fieldName: 'telescope.went',
     fieldSchema: {
       type: String,
       optional: true,
