@@ -19,7 +19,7 @@ class Layout extends Component {
 
           <FlashContainer component={Telescope.components.FlashMessages}/>
 
-          <Telescope.components.Newsletter />
+          {/* <Telescope.components.Newsletter /> */}
 
           {this.props.children}
 
