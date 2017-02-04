@@ -16,7 +16,18 @@ Package.onUse(function (api) {
   ]);
 
   api.addFiles([
-    'lib/scss/toolkit.scss'
+    'lib/scss/toolkit.scss',
+    'lib/js/bootstrap/alert.js',
+    'lib/js/bootstrap/button.js',
+    'lib/js/bootstrap/carousel.js',
+    'lib/js/bootstrap/collapse.js',
+    'lib/js/bootstrap/dropdown.js',
+    'lib/js/bootstrap/modal.js',
+    'lib/js/bootstrap/popover.js',
+    'lib/js/bootstrap/scrollspy.js',
+    'lib/js/bootstrap/tab.js',
+    'lib/js/bootstrap/tooltip.js',
+    'lib/js/bootstrap/util.js'
   ], ['client']);
 
 });

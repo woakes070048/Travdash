@@ -14,6 +14,14 @@ const Header = (props, {currentUser}) => {
       <div className="container">
 
         <div className="navbar-header">
+          <button className="navbar-toggler hidden-md-up float-right"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarResponsive"
+                  aria-controls="navbarResponsive" 
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+          </button>
           {/* placeholder logo */}
           <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
         </div>
