@@ -18,7 +18,7 @@ const Header = (props, {currentUser}) => {
                   type="button"
                   data-toggle="collapse"
                   data-target="#navbarResponsive"
-                  aria-controls="navbarResponsive" 
+                  aria-controls="navbarResponsive"
                   aria-expanded="false"
                   aria-label="Toggle navigation">
           </button>
@@ -26,7 +26,7 @@ const Header = (props, {currentUser}) => {
           <Telescope.components.Logo logoUrl={logoUrl} siteTitle={siteTitle} />
         </div>
 
-        <div className="collapse navbar-toggleable-sm">
+        <div className="collapse navbar-toggleable-sm" id="navbarResponsive">
 
           <ul className="nav navbar-nav">
             <li className="nav-item nav-new-trip">
