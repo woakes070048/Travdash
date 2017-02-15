@@ -149,7 +149,7 @@ Trips.helpers({ getThumbnailUrl() { return Trips.getThumbnailUrl(this); } });
  */
 Trips.getTwitterShareUrl = trip => {
   const via = Telescope.settings.get("twitterAccount", null) ? `&via=${Telescope.settings.get("twitterAccount")}` : "";
-  return `https://twitter.com/intent/tweet?text=${ encodeURIComponent(trip.title) }%20${ encodeURIComponent(Trips.getLink(trip, true)) }${via}`;
+  return `https://twitter.com/intent/tweet?text=${ encodeURIComponent(trip.name) }%20${ encodeURIComponent(Trips.getLink(trip, true)) }${via}`;
 };
 Trips.helpers({ getTwitterShareUrl() { return Trips.getTwitterShareUrl(this); } });
 
@@ -167,10 +167,10 @@ Trips.helpers({ getFacebookShareUrl() { return Trips.getFacebookShareUrl(this); 
  * @param {Object} trip
  */
 Trips.getEmailShareUrl = trip => {
-  const subject = `Interesting link: ${trip.title}`;
+  const subject = `Interesting link: ${trip.name}`;
   const body = `I thought you might find this interesting:
 
-${trip.title}
+${trip.name}
 ${Trips.getLink(trip, true, false)}
 
 (found via ${Telescope.settings.get("siteUrl")})
@@ -178,4 +178,3 @@ ${Trips.getLink(trip, true, false)}
   return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 };
 Trips.helpers({ getEmailShareUrl() { return Trips.getEmailShareUrl(this); } });
-

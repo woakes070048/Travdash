@@ -9,16 +9,15 @@ const TripsListHeader = () => {
     <div>
       <div className="trips-list-header">
         <div className="trips-list-header-categories">
-          <ListContainer 
-            collection={Categories} 
-            limit={0} 
-            resultsPropName="categories" 
+          <ListContainer
+            collection={Categories}
+            limit={0}
+            resultsPropName="categories"
             component={Telescope.components.CategoriesList}
             listId="categories"
           />
         </div>
         <Telescope.components.PostsViews />
-        <Telescope.components.SearchForm/>
       </div>
     </div>
   )

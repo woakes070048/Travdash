@@ -1,8 +1,23 @@
 // dropdowns
 .dropdown-menu {
   padding: $dropdown-padding;
+  left: $dropdown-left;
 
   > li > a {
     padding: $dropdown-anchor-padding;
+  }
+}
+
+.users-menu .dropdown-toggle img {
+  margin-right: 0px;
+}
+
+.dropdown-toggle {
+  &::after {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: 0;
   }
 }

@@ -17,8 +17,7 @@ class UsersMenu extends Component {
       <div className="users-menu">
         <Dropdown id="user-dropdown">
           <Dropdown.Toggle>
-            <Telescope.components.UsersAvatar size="small" user={currentUser} link={false} />
-            <div>{Users.getDisplayName(currentUser)}</div>
+            <Telescope.components.UsersAvatar size="medium" user={currentUser} link={false} />
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <LinkContainer to={`/users/${currentUser.telescope.slug}`}>
@@ -31,7 +30,7 @@ class UsersMenu extends Component {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-    ) 
+    )
   }
 
 }

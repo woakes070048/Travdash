@@ -12,7 +12,7 @@ Trips.publishedFields.list = PublicationsUtils.arrayToFields([
   "createdAt",
   "postedAt",
   "url",
-  "title",
+  "name",
   "slug",
   "excerpt",
   "viewCount",

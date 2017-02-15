@@ -87,9 +87,9 @@ Trips.schemaJSON = {
     control: "datetime"
   },
   /**
-    Title
+    Name
   */
-  title: {
+  name: {
     type: String,
     optional: false,
     max: 500,
@@ -110,7 +110,7 @@ Trips.schemaJSON = {
   /**
     Trip body (markdown)
   */
-  body: {
+  description: {
     type: String,
     optional: true,
     max: 3000,

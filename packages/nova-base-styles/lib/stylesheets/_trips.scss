@@ -6,7 +6,6 @@
 .trips-list-header{
   @include medium-large{
     @include flex-center;
-    justify-content: space-between;
   }
   margin-bottom: $vmargin;
 }

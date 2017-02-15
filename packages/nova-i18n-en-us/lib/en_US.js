@@ -44,6 +44,9 @@ Telescope.strings.en = {
   "trips.link_already_posted": "This link has already been posted.",
   "trips.tripStart": "Start",
   "trips.tripEnd": "End",
+  "trips.hostedBy": "Hosted by",
+  "trips.description": "Description",
+  "trips.name": "Trip Name",
 
   "posts.new_post": "New Post",
   "posts.edit": "Edit",

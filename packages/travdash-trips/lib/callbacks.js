@@ -205,7 +205,7 @@ function TripsNewRequiredPropertiesCheck (trip, user) {
   trip = _.extend(defaultProperties, trip);
 
   // generate slug
-  trip.slug = Telescope.utils.slugify(trip.title);
+  trip.slug = Telescope.utils.slugify(trip.name);
 
   // if trip is approved but doesn't have a postedAt date, give it a default date
   // note: pending trips get their postedAt date only once theyre approved
