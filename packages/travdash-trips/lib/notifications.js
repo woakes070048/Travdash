@@ -7,7 +7,7 @@ Trips.getNotificationProperties = function (data) {
   const postAuthor = Users.findOne(trip.userId);
   const properties = {
     postAuthorName : Trips.getAuthorName(trip),
-    postTitle : Telescope.utils.cleanUp(trip.title),
+    postTitle : Telescope.utils.cleanUp(trip.name),
     profileUrl: Users.getProfileUrl(tripAuthor, true),
     postUrl: Trips.getPageUrl(trip, true),
     thumbnailUrl: trip.thumbnailUrl,

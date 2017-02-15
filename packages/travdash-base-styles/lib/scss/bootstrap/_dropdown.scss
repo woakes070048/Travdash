@@ -28,7 +28,7 @@
   .dropdown-toggle {
     &::after {
       border-top: 0;
-      border-bottom: $caret-width solid;
+      // border-bottom: $caret-width solid;
     }
   }
 }

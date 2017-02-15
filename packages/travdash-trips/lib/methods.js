@@ -15,7 +15,7 @@ Trips.methods = {};
  * @summary Insert a trip in the database (note: optional trip properties not listed here)
  * @param {Object} trip - the trip being inserted
  * @param {string} trip.userId - the id of the user the trip belongs to
- * @param {string} trip.title - the trip's title
+ * @param {string} trip.name - the trip's name
  */
 Trips.methods.new = function (trip) {
 
