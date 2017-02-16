@@ -21,7 +21,7 @@ class Vote extends Component {
     } else if (user.hasUpvoted(post)) {
       this.context.actions.call('posts.cancelUpvote', post._id, () => {
         this.context.events.track("post upvote cancelled", {'_id': post._id});
-      });        
+      });
     } else {
       this.context.actions.call('posts.upvote', post._id, () => {
         this.context.events.track("post upvoted", {'_id': post._id});
@@ -38,7 +38,7 @@ class Vote extends Component {
     const hasUpvoted = Users.hasUpvoted(user, post);
     const hasDownvoted = Users.hasDownvoted(user, post);
     const actionsClass = classNames(
-      "vote", 
+      "vote",
       {voted: hasUpvoted || hasDownvoted},
       {upvoted: hasUpvoted},
       {downvoted: hasDownvoted}
@@ -47,7 +47,7 @@ class Vote extends Component {
     return (
       <div className={actionsClass}>
         <a className="upvote-button" onClick={this.upvote}>
-          <Telescope.components.Icon name="upvote" />
+          <Telescope.components.Icon name="chevron-up"/>
           <div className="sr-only">Upvote</div>
           <div className="vote-count">{post.baseScore || 0}</div>
         </a>

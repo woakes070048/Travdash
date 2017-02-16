@@ -36,16 +36,14 @@ class TripsItem extends Component {
   render() {
 
     const trip = this.props.trip;
-    
+
     let tripClass = "trips-item";
     if (trip.sticky) tripClass += " trips-sticky";
 
     return (
       <div className={tripClass}>
 
-        <div className="trips-item-vote">
-          {/*<Telescope.components.Vote trip={trip} />*/}
-        </div>
+        {/*<div className="trips-item-vote"><Telescope.components.Vote trip={trip} /></div>*/}
 
         {trip.thumbnailUrl ? <Telescope.components.TripsThumbnail trip={trip}/> : null}
 
