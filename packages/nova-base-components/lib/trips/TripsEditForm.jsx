@@ -34,7 +34,6 @@ class TripsEditForm extends Component{
       <Telescope.components.CanDo action="trips.edit.all">
         <div className="trips-edit-form-admin">
           <div className="trips-edit-form-id">ID: {this.props.trip._id}</div>
-          <Telescope.components.TripsStats trip={this.props.trip} />
         </div>
       </Telescope.components.CanDo>
     )
@@ -64,7 +63,7 @@ class TripsEditForm extends Component{
           }}
         />
         <hr/>
-        <a onClick={this.deleteTrip} className="delete-trip-link"><Telescope.components.Icon name="close"/> <FormattedMessage id="trips.delete"/></a>
+        <a onClick={this.deleteTrip} className="delete-trip-link"><FormattedMessage id="trips.delete"/></a>
       </div>
     )
   }
