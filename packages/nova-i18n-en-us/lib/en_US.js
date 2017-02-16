@@ -4,6 +4,7 @@ Telescope.strings.en = {
   "forms.submit": "Submit",
   "forms.cancel": "Cancel",
   "forms.edit": "Edit",
+  "forms.createNewTrip" : "Create New Trip",
 
   "trips.new_trip": "New Trip",
   "trips.edit_success": "Trip “{title}” edited.",

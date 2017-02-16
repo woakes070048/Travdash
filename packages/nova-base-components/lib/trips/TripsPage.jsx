@@ -10,7 +10,7 @@ const TripsPage = ({document, currentUser}) => {
   return (
     <div className="trips-page">
 
-      <Telescope.components.HeadTags url={Trips.getLink(trip)} title={trip.title} image={trip.thumbnailUrl} />
+      <Telescope.components.HeadTags url={Trips.getLink(trip)} title={trip.name} image={trip.thumbnailUrl} />
 
       <Telescope.components.TripsItem trip={trip}/>
 
