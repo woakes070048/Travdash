@@ -18,7 +18,7 @@ const TripsPage = ({document, currentUser}) => {
 
       {/*<SocialShare url={ Trips.getLink(post) } title={ trip.title }/>*/}
 
-      <Telescope.components.TripsCommentsThread document={trip} />
+      {/*<Telescope.components.TripsCommentsThread document={trip} />*/}
 
     </div>
   )
