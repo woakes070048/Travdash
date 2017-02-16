@@ -11,8 +11,8 @@ import Users from 'meteor/nova:users';
  * @summary Generate HTML body and excerpt from Markdown on trip insert
  */
 Trips.before.insert(function (userId, doc) {
-  if(!!doc.body) {
-    const htmlBody = Telescope.utils.sanitize(marked(doc.body));
+  if(!!doc.description) {
+    const htmlBody = Telescope.utils.sanitize(marked(doc.description));
     doc.htmlBody = htmlBody;
     doc.excerpt = Telescope.utils.trimHTML(htmlBody,30);
   }
@@ -23,12 +23,12 @@ Trips.before.insert(function (userId, doc) {
  */
 Trips.before.update(function (userId, doc, fieldNames, modifier) {
   // if body is being modified or $unset, update htmlBody too
-  if (Meteor.isServer && modifier.$set && modifier.$set.body) {
-    const htmlBody = Telescope.utils.sanitize(marked(modifier.$set.body));
+  if (Meteor.isServer && modifier.$set && modifier.$set.description) {
+    const htmlBody = Telescope.utils.sanitize(marked(modifier.$set.description));
     modifier.$set.htmlBody = htmlBody;
     modifier.$set.excerpt = Telescope.utils.trimHTML(htmlBody,30);
   }
-  if (Meteor.isServer && modifier.$unset && (typeof modifier.$unset.body !== "undefined")) {
+  if (Meteor.isServer && modifier.$unset && (typeof modifier.$unset.description !== "undefined")) {
     modifier.$unset.htmlBody = "";
     modifier.$unset.excerpt = "";
   }

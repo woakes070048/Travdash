@@ -1,6 +1,7 @@
 import Telescope from 'meteor/nova:lib';
 import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
+import { withRouter } from 'react-router';
 // import { Row, Col } from 'react-bootstrap';
 import NovaForm from "meteor/nova:forms";
 //import { Messages } from "meteor/nova:core";
@@ -10,6 +11,8 @@ const UsersEdit = (props, context) => {
 
   const user = props.user;
   // const currentUser = props.currentUser;
+
+  const router = props.router;
 
   //const label = `Edit profile for ${Users.getDisplayName(user)}`;
 
@@ -27,6 +30,7 @@ const UsersEdit = (props, context) => {
           methodName="users.edit"
           successCallback={(user)=>{
             context.messages.flash(context.intl.formatMessage({id: "users.edit_success"}, {name: Users.getDisplayName(user)}), 'success')
+            router.push({pathname: Users.getProfileUrl(user)});
           }}
         />
       </div>
@@ -47,5 +51,5 @@ UsersEdit.contextTypes = {
 
 UsersEdit.displayName = "UsersEdit";
 
-module.exports = UsersEdit;
-export default UsersEdit;
+module.exports = withRouter(UsersEdit);
+export default withRouter(UsersEdit);
